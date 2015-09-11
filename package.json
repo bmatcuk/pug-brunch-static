@@ -1,0 +1,33 @@
+{
+  "author": "Bob Matcuk",
+  "name": "jade-brunch-static",
+  "description": "Compile static jade files with brunch.",
+  "keywords": [
+    "brunch",
+    "static",
+    "jade",
+    "html"
+  ],
+  "version": "1.0.0",
+  "homepage": "https://github.com/bmatcuk/jade-brunch-static",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "bmatcuk/jade-brunch-static"
+  },
+  "scripts": {
+    "prepublish": "brunch build",
+    "start": "brunch watch",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "jade": "^1.11.0"
+  },
+  "devDependencies": {
+    "brunch": "^1.8.5",
+    "chai": "^3.2.0",
+    "coffee-script-brunch": "^1.8.2",
+    "javascript-brunch": "^1.7.1",
+    "mocha": "^2.3.0"
+  }
+}
