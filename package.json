@@ -21,7 +21,8 @@
     "test": "mocha"
   },
   "dependencies": {
-    "jade": "^1.11.0"
+    "jade": "^1.11.0",
+    "lodash.merge": "^3.3.2"
   },
   "devDependencies": {
     "brunch": "^1.8.5",
