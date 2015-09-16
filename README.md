@@ -1,3 +1,5 @@
+![Release](https://img.shields.io/npm/v/jade-brunch-static.svg)
+
 # jade-brunch-static
 Compile static jade files with brunch.
 
