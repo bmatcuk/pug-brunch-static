@@ -7,6 +7,9 @@ class JadeBrunchStatic
     if @config?.fileMatch
       @handles = @config.fileMatch
       delete @config.fileMatch
+    if @config?.fileTransform
+      @transformPath = @config.fileTransform
+      delete @config.fileTransform
 
   handles: /\.static\.jade$/
 
