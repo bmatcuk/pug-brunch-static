@@ -1,13 +1,13 @@
-var JadeBrunchStatic, _, jade;
+var PugBrunchStatic, _, pug;
 
-jade = require('jade');
+pug = require('pug');
 
 _ = {
   merge: require('lodash.merge')
 };
 
-JadeBrunchStatic = (function() {
-  function JadeBrunchStatic(config1) {
+PugBrunchStatic = (function() {
+  function PugBrunchStatic(config1) {
     var ref, ref1;
     this.config = config1;
     if ((ref = this.config) != null ? ref.fileMatch : void 0) {
@@ -20,24 +20,24 @@ JadeBrunchStatic = (function() {
     }
   }
 
-  JadeBrunchStatic.prototype.handles = /\.static\.jade$/;
+  PugBrunchStatic.prototype.handles = /\.static\.pug$/;
 
-  JadeBrunchStatic.prototype.transformPath = function(filename) {
-    return filename.replace(/\.static\.jade$/, '.html');
+  PugBrunchStatic.prototype.transformPath = function(filename) {
+    return filename.replace(/\.static\.pug$/, '.html');
   };
 
-  JadeBrunchStatic.prototype.compile = function(data, filename, options, callback) {
+  PugBrunchStatic.prototype.compile = function(data, filename, options, callback) {
     var opts, template;
-    opts = _.merge({}, this.config, options != null ? options.jade : void 0);
-    template = jade.compile(data, opts);
+    opts = _.merge({}, this.config, options != null ? options.pug : void 0);
+    template = pug.compile(data, opts);
     return callback(null, template());
   };
 
-  return JadeBrunchStatic;
+  return PugBrunchStatic;
 
 })();
 
 module.exports = function(config) {
-  return new JadeBrunchStatic(config);
+  return new PugBrunchStatic(config);
 };
 

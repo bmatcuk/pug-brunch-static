@@ -1,19 +1,20 @@
 {
   "author": "Bob Matcuk",
-  "name": "jade-brunch-static",
-  "description": "Compile static jade files with brunch.",
+  "name": "pug-brunch-static",
+  "description": "Compile static pug files with brunch.",
   "keywords": [
     "brunch",
     "static",
+    "pug",
     "jade",
     "html"
   ],
-  "version": "1.1.0",
-  "homepage": "https://github.com/bmatcuk/jade-brunch-static",
+  "version": "2.0.0",
+  "homepage": "https://github.com/bmatcuk/pug-brunch-static",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "bmatcuk/jade-brunch-static"
+    "url": "bmatcuk/pug-brunch-static"
   },
   "scripts": {
     "prepublish": "brunch build -P",
@@ -21,7 +22,7 @@
     "test": "mocha"
   },
   "dependencies": {
-    "jade": "^1.11.0",
+    "pug": "^2.0.0 || ^2.0.0-beta6",
     "lodash.merge": "^3.3.2"
   },
   "devDependencies": {
