@@ -17,7 +17,7 @@ class PugBrunchStatic
     filename.replace /\.static\.pug$/, '.html'
 
   compile: (data, filename, options, callback) ->
-    opts = _.merge {}, @config, options?.pug
+    opts = _.merge {}, {filename: filename}, @config, options?.pug
     template = pug.compile data, opts
     callback null, do template
 

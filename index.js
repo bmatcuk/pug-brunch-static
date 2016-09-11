@@ -28,7 +28,9 @@ PugBrunchStatic = (function() {
 
   PugBrunchStatic.prototype.compile = function(data, filename, options, callback) {
     var opts, template;
-    opts = _.merge({}, this.config, options != null ? options.pug : void 0);
+    opts = _.merge({}, {
+      filename: filename
+    }, this.config, options != null ? options.pug : void 0);
     template = pug.compile(data, opts);
     return callback(null, template());
   };
