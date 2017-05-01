@@ -31,19 +31,20 @@ Add pug-brunch-static to your list of html-brunch-static processors:
 ```coffee
 exports.config =
   ...
-  plugins:
-    static:
+  plugins: {
+    static: {
       processors: [
-        require('html-brunch-static') {
+        require('html-brunch-static')({
           processors: [
-            require('pug-brunch-static') {
-              fileMatch: ...
-              fileTransform: ((filename) -> ...)
-              ...
-            }
+            require('pug-brunch-static')({
+              fileMatch: 'source/views/home.pug',
+              fileTransform: (filename) => filename.replace(/static\.pug$/, '.html')
+            })
           ]
-        }
+        })
       ]
+    }
+  }
 ```
 
 Most options passed to pug-brunch-static are passed, verbatim, to [pug](https://github.com/pugjs/pug), with the exception of:
@@ -52,7 +53,7 @@ Most options passed to pug-brunch-static are passed, verbatim, to [pug](https://
 
   > _fileMatch_ is an [anymatch](https://github.com/es128/anymatch) that is used to determine which files will be handled by this processor. As an anymatch, it may be a string with globs, a regex, or a function that takes a filename and returns true if it should be handled, or false otherwise. The default will match files that end in `.static.pug`.
 
-* **fileTransform** _(default: `(filename) -> filename.replace(/static\.pug$/, 'html')`)_
+* **fileTransform** _(default: `(filename) => filename.replace(/static\.pug$/, '.html')`)_
 
   > _fileTransform_ converts the input filename into an html filename. It takes a filename as input and returns the new filename with the html extension. If you set the _fileMatch_ property above, you'll probably need to set this option as well to ensure that your output files end with the html extension.
 
