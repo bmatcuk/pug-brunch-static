@@ -57,3 +57,5 @@ Most options passed to pug-brunch-static are passed, verbatim, to [pug](https://
 
   > _fileTransform_ converts the input filename into an html filename. It takes a filename as input and returns the new filename with the html extension. If you set the _fileMatch_ property above, you'll probably need to set this option as well to ensure that your output files end with the html extension.
 
+## Context and Local Variables
+The [html-brunch-static's context](https://github.com/bmatcuk/html-brunch-static#context-layouts-and-partials) will be exposed in your pug files as local variables allowing you to use them in your template.

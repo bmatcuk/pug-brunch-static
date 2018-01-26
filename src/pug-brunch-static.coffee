@@ -16,10 +16,12 @@ class PugBrunchStatic
   transformPath: (filename) ->
     filename.replace /\.static\.pug$/, '.html'
 
-  compile: (data, filename, options, callback) ->
+  acceptsContext: true
+
+  compile: (data, filename, options, context, callback) ->
     opts = _.merge {}, {filename: filename}, @config, options?.pug
     template = pug.compile data, opts
-    callback null, do template
+    callback null, template context
 
 module.exports = (config) -> new PugBrunchStatic config
 

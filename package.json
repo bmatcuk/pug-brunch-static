@@ -9,7 +9,7 @@
     "jade",
     "html"
   ],
-  "version": "2.0.1",
+  "version": "3.0.0",
   "homepage": "https://github.com/bmatcuk/pug-brunch-static",
   "license": "MIT",
   "repository": {
@@ -17,19 +17,15 @@
     "url": "bmatcuk/pug-brunch-static"
   },
   "scripts": {
-    "prepublish": "brunch build -P",
-    "start": "brunch watch",
-    "test": "mocha"
+    "prepare": "brunch build -p",
+    "start": "brunch watch"
   },
   "dependencies": {
-    "pug": "^2.0.0 || ^2.0.0-beta6",
-    "lodash.merge": "^3.3.2"
+    "pug": "^2.0.0 || ^2.0.0-rc.4",
+    "lodash.merge": "^4.6.0"
   },
   "devDependencies": {
-    "brunch": "^1.8.5",
-    "chai": "^3.2.0",
-    "coffee-script-brunch": "^1.8.2",
-    "javascript-brunch": "^1.7.1",
-    "mocha": "^2.3.0"
+    "brunch": "^2.10.12",
+    "coffee-script-brunch": "^2.10.2"
   }
 }

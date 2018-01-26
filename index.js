@@ -26,13 +26,15 @@ PugBrunchStatic = (function() {
     return filename.replace(/\.static\.pug$/, '.html');
   };
 
-  PugBrunchStatic.prototype.compile = function(data, filename, options, callback) {
+  PugBrunchStatic.prototype.acceptsContext = true;
+
+  PugBrunchStatic.prototype.compile = function(data, filename, options, context, callback) {
     var opts, template;
     opts = _.merge({}, {
       filename: filename
     }, this.config, options != null ? options.pug : void 0);
     template = pug.compile(data, opts);
-    return callback(null, template());
+    return callback(null, template(context));
   };
 
   return PugBrunchStatic;
